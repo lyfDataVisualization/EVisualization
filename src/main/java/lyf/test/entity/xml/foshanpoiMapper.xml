@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="lyf.test.mapper.foshanpoiMapper" >
+  <resultMap id="BaseResultMap" type="lyf.test.entity.foshanpoi" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="poi_name" property="poiName" jdbcType="VARCHAR" />
+    <result column="poi_address" property="poiAddress" jdbcType="VARCHAR" />
+    <result column="poi_category" property="poiCategory" jdbcType="VARCHAR" />
+    <result column="poi_lon" property="poiLon" jdbcType="REAL" />
+    <result column="poi_lat" property="poiLat" jdbcType="REAL" />
+  </resultMap>
+  <resultMap id="foshanpoista" type="lyf.test.entity.foshanpoista" >
+    <result column="count" property="num" jdbcType="INTEGER" />
+    
+    <result column="poi_category" property="category" jdbcType="VARCHAR" />
+   
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, poi_name, poi_address, poi_category, poi_lon, poi_lat
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from foshanpoi
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectPoiSta" resultMap="foshanpoista">
+    select 
+    count(*),poi_category
+    from foshanpoi
+    group by poi_category
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from foshanpoi
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="lyf.test.entity.foshanpoi" >
+    insert into foshanpoi (id, poi_name, poi_address, 
+      poi_category, poi_lon, poi_lat
+      )
+    values (#{id,jdbcType=INTEGER}, #{poiName,jdbcType=VARCHAR}, #{poiAddress,jdbcType=VARCHAR}, 
+      #{poiCategory,jdbcType=VARCHAR}, #{poiLon,jdbcType=REAL}, #{poiLat,jdbcType=REAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="lyf.test.entity.foshanpoi" >
+    insert into foshanpoi
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="poiName != null" >
+        poi_name,
+      </if>
+      <if test="poiAddress != null" >
+        poi_address,
+      </if>
+      <if test="poiCategory != null" >
+        poi_category,
+      </if>
+      <if test="poiLon != null" >
+        poi_lon,
+      </if>
+      <if test="poiLat != null" >
+        poi_lat,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="poiName != null" >
+        #{poiName,jdbcType=VARCHAR},
+      </if>
+      <if test="poiAddress != null" >
+        #{poiAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="poiCategory != null" >
+        #{poiCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="poiLon != null" >
+        #{poiLon,jdbcType=REAL},
+      </if>
+      <if test="poiLat != null" >
+        #{poiLat,jdbcType=REAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="lyf.test.entity.foshanpoi" >
+    update foshanpoi
+    <set >
+      <if test="poiName != null" >
+        poi_name = #{poiName,jdbcType=VARCHAR},
+      </if>
+      <if test="poiAddress != null" >
+        poi_address = #{poiAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="poiCategory != null" >
+        poi_category = #{poiCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="poiLon != null" >
+        poi_lon = #{poiLon,jdbcType=REAL},
+      </if>
+      <if test="poiLat != null" >
+        poi_lat = #{poiLat,jdbcType=REAL},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="lyf.test.entity.foshanpoi" >
+    update foshanpoi
+    set poi_name = #{poiName,jdbcType=VARCHAR},
+      poi_address = #{poiAddress,jdbcType=VARCHAR},
+      poi_category = #{poiCategory,jdbcType=VARCHAR},
+      poi_lon = #{poiLon,jdbcType=REAL},
+      poi_lat = #{poiLat,jdbcType=REAL}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

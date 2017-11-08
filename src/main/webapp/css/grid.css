@@ -1,0 +1,151 @@
+body {
+  padding-top: 50px;
+  background-color: rgba(232, 241, 246, 1);
+}
+.navbar-inverse {
+    background-color: rgba(255, 255, 255, 1);
+   }
+.navbar_title{
+	    color: rgba(137, 167, 163, 1) !important;
+}
+h4 {
+  margin-top: 25px;
+}
+#mapview{
+	width:100%;
+	height:600px;
+	
+}
+#topbar {
+          background: #fff;
+    position: absolute;
+    top: 105px;
+    left: 65px;
+    padding: 5px;
+    }
+.action-button {
+      font-size: 16px;
+      background-color: transparent;
+      border: 1px solid #D3D3D3;
+      color: #6e6e6e;
+      height: 32px;
+      width: 32px;
+      text-align: center;
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+    }
+
+    .action-button:hover
+    .action-button:focus {
+      background: #0079c1;
+      color: #e4e4e4;
+    }
+#analysis
+{
+	    position: absolute;
+    /* margin-right: 10px; */
+    /* margin-top: 100px; */
+    top: 90px;
+    right: 0px;
+    width: 400px;
+    height: 600px;
+    background: #333;
+    opacity: 0.8;
+    border-color: #080808;
+    color: rgba(122, 152, 152, 1);
+}
+.analysisSE_poi{
+	width:200px;
+	height:250px;
+}
+.analysisSE_peopleDensity{
+	    width: 400px;
+    height: 160px;
+}
+.analysisSE_trafficDensity{
+	width:200px;
+	height:125px;
+}
+#searchBox{
+	position: absolute;
+	top: 90px;
+    right: 400px;
+    width: 300px;
+    
+}
+#searchBox_text{
+	background: #555;
+    opacity: 0.8;
+    color: white;
+}
+.analysis-label{
+	color: rgba(122, 152, 152, 1);
+}
+.toolbar{
+	padding:0px;
+}
+.analysis_title
+{
+	width:100%;
+	height:20px;
+	background: rgba(255, 255, 255, 1);
+    color: rgba(122, 152, 152, 1);
+    text-align: center;
+}
+#analysis_poi_sta
+{
+	width:100%;
+	height: 250px;
+}
+.analysis_button
+{
+	width:120px;
+	padding:0px;
+}
+#myTabContent
+{
+	width:100%;
+	height:100%;
+}
+#myTab{
+	background: rgba(255, 255, 255, 1);
+}
+#myTab1{
+	background: rgba(255, 255, 255, 1);
+}
+#parallelgraphics
+{
+	width:100%;
+	min-height:250px;
+	background: rgba(255, 251, 239, 1);
+}
+
+.row {
+  /*margin-bottom: 20px;*/
+}
+.row .row {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+[class*="col-m"] {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #eee;
+  background-color: rgba(86,61,124,.15);
+  border: 1px solid #ddd;
+  border: 1px solid rgba(86,61,124,.2);
+}
+
+hr {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.myformgroup{
+	margin-bottom: 0px;
+}
+.my-control-label
+{
+	padding-top: 0px !important; 
+}
+.my-form-control{
+	    height: 20px !important;
+}
