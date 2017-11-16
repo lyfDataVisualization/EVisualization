@@ -271,10 +271,10 @@ function MdaSelectedPoi(mda_kinds)//对当前选择的poi进行mda 分类
 				
 				var markerSymbol = {
 				          type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
-				          color: color_kinds[kind],
+				          color: color_kinds1[kind],
 				          outline: { // autocasts as new SimpleLineSymbol()
 				            color: [255, 255, 255],
-				            width: 2
+				            width: 1
 				          }
 				        };
 				

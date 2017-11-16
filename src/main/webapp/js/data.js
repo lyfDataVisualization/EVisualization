@@ -3,8 +3,8 @@
  */
 //[0,259,61,238,73,21,0,1,7,109,11,55,97,42,84,6,73,369,24,33]
 //[0,100,33,150,10,11,0,0,2,22,5,10,14,5,9,5,14,189,9,22]
-[4,186,26,157,249,18,0,0,12,132,23,21,190,37,41,14,90,307,43,49]
-[0,105,3,55,110,2,0,0,5,23,6,3,89,13,12,190,34,320,11,100]
+//[4,186,26,157,249,18,0,0,12,132,23,21,190,37,41,14,90,307,43,49]
+//[0,105,3,55,110,2,0,0,5,23,6,3,89,13,12,190,34,320,11,100]
 var poi_category = ['汽车销售','餐饮服务','政府机构及社会团体','生活服务',
                     '地名地址信息','住宿服务','道路附属设施','摩托车服务','汽车维修',
                     '交通设施服务','汽车服务','医疗保健服务','公司企业','公共设施',
@@ -20,7 +20,7 @@ var color_for_poi_category = {
         '道路附属设施':'#FF3030',
         '摩托车服务':'#FF1493',
         '汽车维修':'#FFBBFF',
-        '交通设施服务':'#00008B',
+        '交通设施服务':'#00DDD5',
         '汽车服务':'#008B8B',
         '医疗保健服务':'#1E90FF',//
         '公司企业':'#FF6347',//
@@ -33,6 +33,8 @@ var color_for_poi_category = {
         '体育休闲服务':'#32CD32'//
 		};
 var color_kinds = ['#00F5FF','#66CDAA','#00FF7F','#C0FF3E','#8B658B','#FF6A6A'];
+var color_kinds1 = [[0,245,255,0.7],[102,205,170,0.7],[0,255,127,0.7],
+                    [192,255,62,0.7],[139,101,139,0.7],[255,106,106,0.7]];
 var data1 = [//禅城区
     [1,4,9,8,7,5,6,2]
    ];
@@ -68,20 +70,20 @@ parallelOption = {
 		title : {
 		        text: '佛山市各区功能结构分析',
 		        textStyle: {
-	            color: '#fff',
+	            color: '#AADFFF',
 	            fontSize: 16
 		        }
 		},
-	    backgroundColor: '#333',
-//	    legend: {
-//	        bottom: 30,
-//	        data: ['北京'],
-//	        itemGap: 20,
-//	        textStyle: {
-//	            color: '#fff',
-//	            fontSize: 14
-//	        }
-//	    },
+	    backgroundColor: '#474848',
+	    legend: {
+//	        top: 5,
+	        data: ['禅城区','高明区','南海区','三水区','顺德区'],
+	        itemGap: 20,
+	        textStyle: {
+	            color: '#AADFFF',
+	            fontSize: 14
+	        }
+	    },
 	    toolbox: {
 	        iconStyle: {
 	            normal: {
@@ -118,7 +120,7 @@ parallelOption = {
 	            nameLocation: 'end',
 	            nameGap: 20,
 	            nameTextStyle: {
-	                color: '#fff',
+	                color: '#AADFFF',
 	                fontSize: 12
 	            },
 	            axisLine: {
@@ -136,68 +138,68 @@ parallelOption = {
 	            },
 	            axisLabel: {
 	                textStyle: {
-	                    color: '#fff'
+	                    color: '#AADFFF'
 	                }
 	            }
 	        }
 	    },
 	    series: [
 	        {
-	            name: '1',
+	            name: '禅城区',
 	            type: 'parallel',
 	            lineStyle:{
 	                normal:{
-	                    color:"#FD979B",
+	                    color:"#E085A5",
 	                    width: 4,
-	                    opacity: 0.5
+	                    opacity: 0.6
 	                }
 	            },
 	            data: data1
 	        },
 	        {
-	            name: '2',
+	            name: '高明区',
 	            type: 'parallel',
 	            lineStyle:{
 	                normal:{
-	                    color:"#9936FF",
+	                    color:"#A5E3D6",
 	                    width: 4,
-	                    opacity: 0.5
+	                    opacity: 0.6
 	                }
 	            },
 	            data: data2
 	        },
 	        {
-	            name: '3',
+	            name: '南海区',
 	            type: 'parallel',
 	            lineStyle:{
 	                normal:{
-	                    color:"#00FF00",
+	                    color:"#B6D85B",
 	                    width: 4,
-	                    opacity: 0.5
+	                    opacity: 0.6
 	                }
 	            },
 	            data: data3
 	        },
 	        {
-	            name: '4',
+	            name: '三水区',
 	            type: 'parallel',
 	            lineStyle:{
 	                normal:{
-	                    color:"#97CB9A",
+	                    color:"#D1E4D1",
 	                    width: 4,
-	                    opacity: 0.5
+	                    opacity: 0.6
 	                }
 	            },
 	            data: data4
 	        },
 	        {
-	            name: '5',
+	            name: '顺德区',
 	            type: 'parallel',
 	            lineStyle:{
 	                normal:{
-	                    color:"#78A6FE",
+	                    color:"#DCC7BF",
 	                    width: 4,
-	                    opacity: 0.5
+	                    opacity: 0.6
 	                }
 	            },
 	            data: data5
@@ -206,7 +208,7 @@ parallelOption = {
 	};
 parallelOption_new = {
 		color:['#2FC8EC','#dbfbff'],
-	    backgroundColor: '#333',
+	    backgroundColor: '#474848',
 	    brush: {
 	        toolbox:['clear']
 	    },
@@ -222,7 +224,7 @@ parallelOption_new = {
 	            nameLocation: 'end',
 	            nameGap: 20,
 	            nameTextStyle: {
-	                color: '#fff',
+	                color: '#AADFFF',
 	                fontSize: 12
 	            },
 	            axisLine: {
@@ -240,7 +242,7 @@ parallelOption_new = {
 	            },
 	            axisLabel: {
 	                textStyle: {
-	                    color: '#fff'
+	                    color: '#AADFFF'
 	                }
 	            }
 	        }
@@ -252,11 +254,11 @@ SE_option = {
 	    title : {
 			        text: '站点周边设施分析',
 			        textStyle: {
-		            color: '#fff',
+		            color: '#AADFFF',
 		            fontSize: 16
 			        }
 		},
-	    backgroundColor: '#333',
+	    backgroundColor: '#474848',
 	    color:['#2FC8EC','#9D88EE'],
 	    tooltip: {
 	        trigger: 'axis',
@@ -276,14 +278,14 @@ SE_option = {
 	        },
 	        iconStyle:{
 	     		normal:{
-	     			color:'#F0E6B3'
+	     			color:'#AADFFF'
 	     		}
 	        }
 	    },
 	    legend: {
 	        data:['POI','微博签到'],
 	        textStyle: {
-	 	    	color: '#fff',
+	 	    	color: '#AADFFF',
 	 	    	fontSize: 16
 	 	    }
 	    },
@@ -296,7 +298,7 @@ SE_option = {
 	            },
 	            axisLine: {
 	 	    		lineStyle: {
-	 	    		    color: '#fff'
+	 	    		    color: '#AADFFF'
 	 	    		}
 	 	    	}
 	        }
@@ -306,7 +308,7 @@ SE_option = {
 	            type: 'value',
 	            name: 'POI',
 	            nameTextStyle: {
-		 	    	color: '#fff',
+		 	    	color: '#AADFFF',
 		 	    	fontSize: 16
 		 	    },
 	             axisLine: {
@@ -319,7 +321,7 @@ SE_option = {
 	            type: 'value',
 	            name: '微博签到',
 	            nameTextStyle: {
-		 	    	color: '#fff',
+		 	    	color: '#AADFFF',
 		 	    	fontSize: 16
 		 	    },
 	             axisLine: {
@@ -362,7 +364,7 @@ function getVirtulData(year) {
 //var data = getVirtulData(2017);
 
 peopleDensity_option = {
-	backgroundColor: '#333',
+	backgroundColor: '#474848',
 
 //    title: {
 //        top: 0,

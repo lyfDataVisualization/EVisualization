@@ -211,8 +211,8 @@ function AddSubway()
 		          type: "simple", // autocasts as new SimpleRenderer()
 		          symbol: {
 		            type: "simple-line", // autocasts as new SimpleLineSymbol()
-		            width: 2,
-		            color: [35,235, 185]
+		            width: 4,
+		            color: [160,224, 255,0.8]
 		          }
 		        };
 		var bufferLayerrenderer = {
@@ -231,7 +231,11 @@ function AddSubway()
                 symbol: {
                   type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
                   size: 6,
-                  color: "#FF4000"
+                  color: "#FF4000",
+                  outline: { // autocasts as new SimpleLineSymbol()
+			            color: [255, 255, 255],
+			            width: 1
+			          }
                 }
               };
 //		var weiboLayerRenderer = {

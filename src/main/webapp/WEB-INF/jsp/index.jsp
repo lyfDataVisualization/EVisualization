@@ -41,7 +41,7 @@
 <body>
 <!-- <h2>1Hello World!</h2> -->
 <!-- ${test.name}   --> 
-	<nav class="navbar navbar-inverse navbar-fixed-top">
+	<nav class="navbar navbar-inverse navbar-fixed-top mynav">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -65,7 +65,7 @@
 
       <div class="row">
       	<ul id="myTab1" class="nav nav-pills">
-			<li class="label-warning"><a href="#addData" id = "myTab1_addData" data-toggle="modal" data-target="#addData_modal">Data</a></li>
+			<li class="label-warning e_warning"><a class="e_warning" href="#addData" id = "myTab1_addData" data-toggle="modal" data-target="#addData_modal">Data</a></li>
 			<!-- <li><a href="#analysisDANS" data-toggle="tab">DANS</a></li> -->
 		</ul>
         <!-- <div class="col-md-12">.col-md-12</div> -->
@@ -86,7 +86,8 @@
 		      <button class="action-button esri-icon-trash" id="resetBtn" type="button" title="Clear graphics"></button>
 		    </div>
         </div>
-        		
+        <!-- 	<div id="analysis1">
+        	</div>	 -->
       </div>
       
       <div id = "searchBox">
@@ -97,7 +98,7 @@
 				<div class="input-group">
 					<input type="text" id="searchBox_text" class="form-control">
 					<span class="input-group-btn">
-						<button id="searchBox_button" class="btn btn-warning" type="button" onclick="doSearch()">
+						<button id="searchBox_button" class="btn btn-warning e_warning" type="button" onclick="doSearch()">
 							Go!
 						</button>
 					</span>
@@ -165,10 +166,10 @@
 							<div class="row">
 							</div>
 							<div class="col-sm-6">
-								<button id = "analysisMDA_Buffer" class="btn btn-warning btn-lg center-block analysis_button">Buffer</button>
+								<button id = "analysisMDA_Buffer" class="btn btn-warning btn-lg center-block analysis_button e_warning">Buffer</button>
 							</div>
 							<div class="col-sm-6">
-								<button id = "analysisMDA_ModalPage" class="btn btn-warning btn-lg center-block analysis_button" data-toggle="modal" data-target="#myModal">MDA</button>
+								<button id = "analysisMDA_ModalPage" class="btn btn-warning btn-lg center-block analysis_button e_warning" data-toggle="modal" data-target="#myModal">MDA</button>
 							</div>
 							</div>
 							<!-- <div class="form-group">
@@ -195,10 +196,10 @@
 					<div class="tab-pane fade" id="analysisSE">
 						<div class="row">
 							<div class="col-sm-6">
-								<button id = "heat_map" class="btn btn-warning btn-lg center-block analysis_button">heat map</button>
+								<button id = "heat_map" class="btn btn-warning btn-lg center-block analysis_button e_warning">heat map</button>
 							</div>
 							<div class="col-sm-6">
-								<button id = "add_subway" class="btn btn-warning btn-lg center-block analysis_button">subway</button>
+								<button id = "add_subway" class="btn btn-warning btn-lg center-block analysis_button e_warning">subway</button>
 							</div>
 							
 							<!-- <div class="col-sm-6">
@@ -315,7 +316,7 @@
 </div>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
-		<div class="modal-content">
+		<div class="modal-content modal-content-E">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
 					&times;

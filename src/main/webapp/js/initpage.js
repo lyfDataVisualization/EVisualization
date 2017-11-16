@@ -45,12 +45,12 @@ function init()
  	    				poi_category.push(poista["category"]);
  	    			}
  	    		option = {
- 	    				backgroundColor: '#333',
+ 	    				backgroundColor: '#474848',
  	    				color:['#2FC8EC'],
  	    			    title : {
  	    			        text: '佛山市南海区POI',
  	    			        textStyle: {
-	    			            color: '#fff',
+	    			            color: '#AADFFF',
 	    			            fontSize: 16
  	    			        }
  	    			    },
@@ -65,7 +65,7 @@ function init()
  	    			    legend: {
  	    			        data:['POI'],
  	    			        textStyle: {
- 	    			            color: '#fff',
+ 	    			            color: '#AADFFF',
  	    			            fontSize: 16
  	    			        }
  	    			    },
@@ -79,7 +79,7 @@ function init()
  	    			        },
  	    			       iconStyle:{
  	    			        		normal:{
- 	    			        			color:'#fff'
+ 	    			        			color:'#AADFFF'
  	    			        		}
  	    			        }
  	    			    },
@@ -90,12 +90,12 @@ function init()
  	    			            data : poi_category,
  	    			            
  	    			            nameTextStyle: {
- 	    			              color: '#fff',
+ 	    			              color: '#AADFFF',
  	    			              fontSize: 14
  	    			            },
  	    			            axisLine: {
  	    			              lineStyle: {
- 	    			                  color: '#fff'
+ 	    			                  color: '#AADFFF'
  	    			              }
  	    			           	}
  	    			        }
@@ -106,12 +106,12 @@ function init()
 	 	    			        nameLocation: 'end',
 	 	    			        
 	 	    			        nameTextStyle: {
-	 	    			              color: '#fff',
+	 	    			              color: '#AADFFF',
 	 	    			              fontSize: 16
 	 	    			        },
 	 	    			        axisLine: {
 	 	    			              lineStyle: {
-	 	    			                  color: '#fff'
+	 	    			                  color: '#AADFFF'
 	 	    			              }
 	 	    			          },
  	    			        }
@@ -187,12 +187,13 @@ function init()
 	require([
 	         "esri/Map",
 	         "esri/views/SceneView",
+	         "esri/views/MapView",
 	         "esri/layers/FeatureLayer",
 	         "esri/layers/GraphicsLayer",
 	         "esri/layers/support/LabelClass",
 	         "esri/widgets/Legend",
 	         "dojo/domReady!"
-	       ], function(Map, SceneView,FeatureLayer,GraphicsLayer,LabelClass,Legend) {
+	       ], function(Map, SceneView,MapView,FeatureLayer,GraphicsLayer,LabelClass,Legend) {
 
 	         map = new Map({
 	           basemap: "dark-gray-vector",
@@ -217,7 +218,7 @@ function init()
 		                   value: "佛山市", // code for interstates/freeways
 		                   symbol: {
 			                	    type: "simple-fill",  // autocasts as new SimpleFillSymbol()
-			                	    color: "#FD979B"
+			                	    color: [224,133,165,0.5]
 			               },
 		                   label: "禅城区"
 	                   }, 
@@ -225,7 +226,7 @@ function init()
 		                   value: "南海市", // code for interstates/freeways
 		                   symbol: {
 			                	    type: "simple-fill",  // autocasts as new SimpleFillSymbol()
-			                	    color: [0, 255, 0, 0.1]
+			                	    color: [182, 216, 91, 0.5]
 			               },
 		                   label: "南海区"
 	                   }, 
@@ -233,7 +234,7 @@ function init()
 		                   value: "三水市", // code for interstates/freeways
 		                   symbol: {
 			                	    type: "simple-fill",  // autocasts as new SimpleFillSymbol()
-			                	    color: "#97CB9A"
+			                	    color: [209,228,209,0.5]
 			               },
 		                   label: "三水区"
 	                   }, 
@@ -241,7 +242,7 @@ function init()
 		                   value: "顺德市", // code for interstates/freeways
 		                   symbol: {
 			                	    type: "simple-fill",  // autocasts as new SimpleFillSymbol()
-			                	    color: "#78A6FE"
+			                	    color: [220,199,191,0.5]
 			               },
 		                   label: "顺德区"
 	                   }, 
@@ -249,12 +250,18 @@ function init()
 		                   value: "高明县", // code for U.S. highways
 		                   symbol: {
 		                	    type: "simple-fill",  // autocasts as new SimpleFillSymbol()
-		                	    color: "#9936FF"
+		                	    color: [165,227,214,0.5]
 		                   },
 		                   label: "高明区"
 	                 }]
 	               };
 	         var labelClass = new LabelClass({
+//	        	 	symbol: {
+//	        		    type: "text",  // autocasts as new TextSymbol()
+//	        		    color: "white",
+//	        		    haloSize: 1,
+//	        		    haloColor: "black"
+//	        		  },
 	             symbol: {
 	               type: "label-3d", // autocasts as new LabelSymbol3D()
 	               symbolLayers: [{
@@ -311,8 +318,12 @@ function init()
 	                 type: "simple", // autocasts as new SimpleRenderer()
 	                 symbol: {
 	                   type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
-	                   size: 6,
-	                   color: "#FF4000"
+	                   size: 4,
+	                   color: [214,0,120,0.7],
+	                   outline: { // autocasts as new SimpleLineSymbol()
+		    	            color: [255, 255, 255],
+		    	            width: 0.5
+		    	          }
 	                 }
 	               };
 	         featureLayer = new FeatureLayer({//poi点
@@ -409,6 +420,15 @@ function gotoSelectPoiOnSceneview(name)
 	      // Called each time the promise is resolved    
 	      function getResults(response) {
 
+	    	  	var markerSymbol = {
+	    	          type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
+	    	          color: poi_color,
+	    	          size: "4px",  // pixels
+	    	          outline: { // autocasts as new SimpleLineSymbol()
+	    	            color: [255, 255, 255],
+	    	            width: 0.5
+	    	          }
+	    	        };
 	        // Loop through each of the results and assign a symbol and PopupTemplate
 	        // to each so they may be visualized on the map
 	        var peakResults = arrayUtils.map(response.features, function(
@@ -416,19 +436,20 @@ function gotoSelectPoiOnSceneview(name)
 
 	        // Sets the symbol of each resulting feature to a cone with a 
 	          // fixed color and width. The height is based on the mountain's elevation
-	          feature.symbol = new PointSymbol3D({
-	            symbolLayers: [new ObjectSymbol3DLayer({
-	              material: {
-	                //color: "red"
-	            	  color: poi_color
-	              },
-	              resource: {
-	                primitive: "sphere"
-	              },
-	              width: 100,
-	              height: 1000
-	            })]
-	          });
+	        		feature.symbol = 	markerSymbol;
+//	          feature.symbol = new PointSymbol3D({
+//	            symbolLayers: [new ObjectSymbol3DLayer({
+//	              material: {
+//	                //color: "red"
+//	            	  color: poi_color
+//	              },
+//	              resource: {
+//	                primitive: "sphere"
+//	              },
+//	              width: 100,
+//	              height: 1000
+//	            })]
+//	          });
 //	          console.log(feature);
 	          return feature;
 	        });

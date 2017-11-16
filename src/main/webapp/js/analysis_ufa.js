@@ -24,7 +24,7 @@ function fun_analysisUFA()
 	                   value: "餐饮服务", // code for interstates/freeways
 	                   symbol: {
 		                	    type: "simple-fill",  // autocasts as new SimpleFillSymbol()
-		                	    color: "#66CDAA"
+		                	    color: [102,205,170,0.7]
 		               },
 	                   label: "餐饮服务"
                   }, 
@@ -32,7 +32,7 @@ function fun_analysisUFA()
 	                   value: "生活服务", // code for interstates/freeways
 	                   symbol: {
 		                	    type: "simple-fill",  // autocasts as new SimpleFillSymbol()
-		                	    color: "#C0FF3E"
+		                	    color: [192,255,62,0.7]
 		               },
 	                   label: "生活服务"
                   }, 
@@ -40,7 +40,7 @@ function fun_analysisUFA()
 	                   value: "医疗保健服务", // code for interstates/freeways
 	                   symbol: {
 		                	    type: "simple-fill",  // autocasts as new SimpleFillSymbol()
-		                	    color: "#1E90FF"
+		                	    color: [30,144,255,0.7]
 		               },
 	                   label: "医疗保健服务"
                   }, 
@@ -48,7 +48,7 @@ function fun_analysisUFA()
 	                   value: "公司企业", // code for interstates/freeways
 	                   symbol: {
 		                	    type: "simple-fill",  // autocasts as new SimpleFillSymbol()
-		                	    color: "#FF6347"
+		                	    color: [252,157,154,0.7]
 		               },
 	                   label: "公司企业"
                   }, 
@@ -56,7 +56,7 @@ function fun_analysisUFA()
 	                   value: "科教文化服务", // code for U.S. highways
 	                   symbol: {
 	                	    type: "simple-fill",  // autocasts as new SimpleFillSymbol()
-	                	    color: "#FF00FF"
+	                	    color: [249,205,173,0.7]
 	                   },
 	                   label: "科教文化服务"
                 },
@@ -64,7 +64,7 @@ function fun_analysisUFA()
                    value: "风景名胜", // code for interstates/freeways
                    symbol: {
 	                	    type: "simple-fill",  // autocasts as new SimpleFillSymbol()
-	                	    color: "#FF1493"
+	                	    color: [200,200,169,0.7]
 	               },
                    label: "风景名胜"
               }, 
@@ -72,7 +72,7 @@ function fun_analysisUFA()
                   value: "购物服务", // code for interstates/freeways
                   symbol: {
 	                	    type: "simple-fill",  // autocasts as new SimpleFillSymbol()
-	                	    color: "#FA8072"
+	                	    color: [131,175,155,0.7]
 	               },
                   label: "购物服务"
              },
@@ -80,7 +80,7 @@ function fun_analysisUFA()
                  value: "体育休闲服务", // code for interstates/freeways
                  symbol: {
 	                	    type: "simple-fill",  // autocasts as new SimpleFillSymbol()
-	                	    color: "#32CD32"
+	                	    color: [50,205,50,0.7]
 	               },
                  label: "体育休闲服务"
              }]
